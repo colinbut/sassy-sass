@@ -1,0 +1,54 @@
+// variables
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+#content {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+// nesting
+#nav {
+  ul {
+    margin: 0;
+    padding: 1;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+// mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
+
+// demonstrates some operators
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 360px / 960px * 100%;
+}
